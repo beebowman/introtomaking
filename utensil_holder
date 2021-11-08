@@ -1,0 +1,57 @@
+int buzzerPin = 4;
+const int buzzer = 9; //buzzer to arduino pin 9
+
+void setup() {
+
+  //start serial connection
+
+  Serial.begin(9600);
+
+  //configure pin 2 as an input and enable the internal pull-up resistor
+
+  pinMode(2, INPUT_PULLUP);
+
+  pinMode(13, OUTPUT);
+
+}
+
+void loop() {
+
+  //read the pushbutton value into a variable
+
+  int sensorVal = digitalRead(2);
+
+  //print out the value of the pushbutton
+
+  Serial.println(sensorVal);
+
+  // Keep in mind the pull-up means the pushbutton's logic is inverted. It goes
+
+  // HIGH when it's open, and LOW when it's pressed. Turn on pin 13 when the
+
+  // button's pressed, and off when it's not:
+
+  if (sensorVal == HIGH) {
+
+   digitalWrite(13, HIGH);
+    tone(buzzer, 2500); // Send 1KHz sound signal...
+    tone(buzzer, 1000);
+    tone(buzzer, 500);
+    tone(buzzer, 2000); 
+    tone(buzzer, 200);
+    tone(buzzer, 1000); 
+    tone(buzzer, 2100);
+    // digitalWrite(buzzerPin, HIGH);
+    digitalWrite(7,HIGH);
+    
+
+  } else {
+
+    digitalWrite(13, LOW);
+   // digitalWrite(buzzerPin, LOW);
+    noTone(buzzer);
+    digitalWrite(7,LOW);
+
+
+  }
+}
