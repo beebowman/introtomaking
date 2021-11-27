@@ -233,7 +233,7 @@ void loop(void) {
  Serial.println("Test7");
 
  
-while ( now.hour() == 14 or now.hour() == 15 or now.hour() == 16 or now.hour() == 17 or now.hour() == 18 or or now.hour() == 19 or now.hour() ==20 or now.hour() == 22 or now.hour() == 23 ) 
+while ( now.hour() == 14 or now.hour() == 15 or now.hour() == 16 or now.hour() == 17 or now.hour() == 18 or now.hour() == 19 or now.hour() == 20 or now.hour() == 22 or now.hour() == 23 ) 
     {
   
 
